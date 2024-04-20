@@ -25,40 +25,16 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        //Root node
-        Group root = new Group();
-        //Scene that show to user as a page
-        Scene scene = new Scene(root, Color.BLACK);
-        //Adding Icon to stage
-        Image icon = new Image("home.png");
-        stage.getIcons().add(icon);
-        //Adding title to stage
-        stage.setTitle("Stage 1");
-
-        //Setting width and height for stage
-        stage.setWidth(420);
-        stage.setHeight(420);
-
-<<<<<<< Updated upstream
-        //Enable and Disable Resizable for stage
-        // stage.setResizable(false);
-
-        //Set X and Y axis for stage
-        // stage.setX(50);
-        // stage.setY(50);
-=======
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-            Scene scene = new Scene(root, 600, 600);
+            Scene scene = new Scene(root);
+
+            String css = this.getClass().getResource("application.css").toExternalForm();
+
+            scene.getStylesheets().add(css);
 
             stage.setScene(scene);
             stage.setTitle("Using Scene Builder");
             stage.show();
->>>>>>> Stashed changes
-
-        //Set Fullscreen, Fullscreen exit hint and Fullscreen exit key combination
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("You Can't Escape unless you didn't press q");
-        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("q")); 
 
         // Stage stage = new Stage();
         //Stage is the window of the application
