@@ -39,12 +39,21 @@ public class App extends Application {
         stage.setWidth(420);
         stage.setHeight(420);
 
+<<<<<<< Updated upstream
         //Enable and Disable Resizable for stage
         // stage.setResizable(false);
 
         //Set X and Y axis for stage
         // stage.setX(50);
         // stage.setY(50);
+=======
+            Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+            Scene scene = new Scene(root, 600, 600);
+
+            stage.setScene(scene);
+            stage.setTitle("Using Scene Builder");
+            stage.show();
+>>>>>>> Stashed changes
 
         //Set Fullscreen, Fullscreen exit hint and Fullscreen exit key combination
         stage.setFullScreen(true);
