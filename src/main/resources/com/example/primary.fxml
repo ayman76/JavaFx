@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Go to Secondary View" onAction="#switchToSecondary"/>
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="-1.0" layoutY="77.0" prefHeight="17.0" prefWidth="600.0" text="Select what you want ot eat?" textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="pizzaRadio" layoutX="19.0" layoutY="200.0" mnemonicParsing="false" onAction="#getFood" text="Pizza">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="food" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="sushiRadio" layoutX="240.0" layoutY="200.0" mnemonicParsing="false" onAction="#getFood" text="Sushi" toggleGroup="$food">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="ramenRadio" layoutX="460.0" layoutY="200.0" mnemonicParsing="false" onAction="#getFood" text="Ramen" toggleGroup="$food">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </RadioButton>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>
