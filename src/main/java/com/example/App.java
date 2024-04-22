@@ -25,8 +25,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        Group root = new Group();
-        Scene scene = new Scene(root, Color.BLACK);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("primary.fxml"));
+        Parent root = fxmlLoader.load();
+        PrimaryController primaryController = fxmlLoader.getController();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
